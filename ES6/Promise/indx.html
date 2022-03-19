@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="one"></p>
+    <p id="demo"></p>
+    <script>
+        // Here resolve success
+        // reject is error
+        let promise = new Promise(function (resolve, reject) {
+            setTimeout(function () { resolve("This is resolved") }, 3000);
+        })
+        promise.then(function (value) {
+            document.getElementById("one").innerHTML = value
+        });
+
+
+        //rest parameter
+        function sum(...args) {
+            let sum = 0;
+            for (let arg of args)
+                sum += arg;
+            return sum;
+        }
+        let x = sum(1, 3, 5, 6, 8, 6, 78)
+        document.getElementById("one").innerHTML = x;
+
+        //String include
+        let text = "Hello world!, This is amazing"
+        s = text.includes("This")
+        console.log(s)
+
+        // String starts with
+        let text1 = "Hello world!, This is amazing"
+        k = text1.startsWith("This")
+        console.log(k)
+
+        // String Ends with
+        let text2 = "Hello world!, This is amazing"
+        a = text2.startsWith("This")
+        console.log(a)
+
+        //from return the string to array
+        const myArr = Array.from("Hello world!,This will come in array");
+        document.getElementById("demo").innerHTML = myArr;
+
+        //array find return the element which is greater than the given element
+        const array12 = [3, 6, 7, 4, 7, 3]
+        let first = array12.find(myfunction)
+        function myfunction(value, index, array) {
+            return value > 2
+        }
+        console.log(first)
+
+
+
+        //Array findindex()
+        const numbers1 = [1, 2, 4, 6, 7]
+        let first1 = numbers1.findIndex(myfunction)
+        function myfunction(value) {
+            return value > 5
+        }
+        console.log(first1)
+    </script>
+
+</body>
+
+</html>

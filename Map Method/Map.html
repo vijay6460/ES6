@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<p id="one"></p>
+
+
+    <script>
+
+
+//Using the functions
+
+var text="";
+var numbers=[77,22,4,5,4,8,7]
+numbers.forEach(myfunction);
+document.getElementById("one").innerHTML=text;
+function myfunction(value){
+    text=text+value+"<br>"
+}
+
+// simple notation of forEach
+const array=[1,4,5,36,9];
+array.forEach(Element=>console.log(Element))
+
+
+const array1=['hello','world','this','is','fun']
+// const array1=prompt("Enter the values of an array")
+var array2=[...array1]// using the spread opeartor
+array2.forEach(Element=>console.log(Element))
+
+
+//Map method
+
+const numbers1=[1,2,3,4,5,0]
+const numbers2=numbers1.map(myfunction);
+function myfunction(value){
+   console.log(value*2)
+    
+}
+
+// Map method it iterates each and every element
+// It uses the fat arrow funnction
+
+const array3=[1,2,44,5,6,7];
+const map1=array3.map(Element=>Element*2)// Map method uses fat arrow function
+console.log(map1)
+
+
+
+// Filter method
+// which filters the numbers with desired value
+var numbers3=[1,2,4,55,33,6,95,45,56]
+var funny=numbers3.filter(myfunction)
+function myfunction(value){
+    return value>20;
+}
+x=console.log(funny)
+
+
+// Array reduce
+//it will total all the elements in an array
+
+var array4=[1,3,4,5,54,6,10,56,34]
+var sum=array4.reduce(myfunction);
+function myfunction(total,value){
+    return total+value
+}
+console.log(sum)
+
+// Array reduce Right
+//Both are same array reduce and array reduce right perform same opertion
+var array5=[1,3,4,5,54,6,10,56,34]
+var sum1=array5.reduceRight(myfunction);
+function myfunction(total,value){
+    return total+value
+}
+console.log(sum1)
+
+
+//Array every checks the element and return true or false
+var array6=[1,3,4,5,54,6,10,56,34]
+var sum2=array6.every(myfunction);
+function myfunction(total,value,array){
+    return value>20;
+}
+console.log(sum2)
+
+
+//Array some()
+var numbers7=[34,56,5656,4565,66766]
+var thisisfun=numbers7.some(myfunction)
+function myfunction(value){
+    return value<20;
+}
+console.log(thisisfun)
+
+//Array indexof() return the index of the particular element
+var cars=['bugatti','pagani','lamborgini','maruti']
+var carslist=cars.indexOf("pagani")
+console.log(carslist)
+
+
+// lastIndexof() return the perticular index element
+var cars=['bugatti','pagani','lamborgini','maruti']
+var carslist=cars.lastIndexOf("maruti")
+console.log(carslist)
+
+//JSON.parse()
+const text1='{"name":"vijay","loc":"hyd","age":"25"}'
+const obj=JSON.parse(text1);
+console.log(obj)
+
+//JSON.Stringfy return the string in each element
+var obj1={name:"vijay",age:24,loc:'hyd'}
+var obj2=JSON.stringify(obj1)
+console.log(obj2)
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="one"></p>
+    
+    <script>
+
+        //Call Back funnction and function hoiesting or verriding
+        //Invoking the function in sequence
+        function First(){
+            console.log("Hello")
+        }
+        function Second(){
+            console.log("Second")
+        }
+        First();
+        Second();
+
+        //Invoking the function in reverse order
+
+       /* function First(){
+            console.log("Hello")
+        }
+        function Second(){
+            console.log("Second")
+        }
+        Second();
+        First();
+
+        //passing some arguments and parameters
+        function First(){
+            console.log("Hello")
+        }
+        function Second(x,y){
+            return x+y;
+        }
+
+        First();
+        console.log(Second(20,30))*/
+
+
+        //Function call back
+        /* function fun(some){
+            document.getElementById("one").innerHTML=some;
+            
+        }
+        function second(num1,num2,myCallback){
+            let sum=num1+num2;
+            myCallback(sum)
+        }
+        second(5,6,fun)
+ */
+
+ // passing the function 
+ setTimeout(myfunction,3000)
+ function myfunction(){
+     console.log("Hello")
+ }
+
+ setTimeout(function(){
+     funny("Hello world")},3000);
+
+     function funny(value){
+         document.getElementById("one").innerHTML=value
+     }
+
+
+     // waiting for certain time interval
+     // the loop won't be stopped
+    /* setInterval(() => {
+        console.log("Hello")
+        console.log("return ome thing")
+        
+    }, 1000); */
+      
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="one"></p>
+
+    <script>
+        // Here both are same
+        async function myfunction(){
+             console.log("Hello")
+            }
+
+           /*  function myfunction(){
+                return Promise.resolve("Hello")
+            } */
+
+            myfunction().then(
+                function (value){
+                    console.log("Hello this will Execute")
+                },
+                function (error){
+                    console.log("this will not Execute")
+                }
+            )
+
+
+
+//Async and await
+/* async function mydisplay(){
+    let promise=new Promise (function (resolve,reject){
+        resolve("I hate You")
+    })
+document.getElementById("one").innerHTML=await promise;
+}
+
+mydisplay() */
+
+/* 
+async function mydisplay(){
+    let promise=new Promise(function(resolve){
+        setTimeout(
+        function funny(){
+        
+                console.log("Hello")
+        },1000)
+    });
+    document.getElementById("one").innerHTML=await promise;}
+
+    mydisplay() */
+
+
+    // async is placed before the function
+    //await works inside the async function
+
+async function getFile(){
+let promise=new Promise(function(resolve)
+{ let req=new XMLHttpRequest();
+    req.open("GET","mycar.html")
+    req.onload=function(){
+    if(req.status==200){
+        resolve(req.response)
+    }    
+    else{
+        resolve("file not found")}
+    }
+req.send()
+})
+document.getElementById("one").innerHTML=await promise;
+}
+getFile();    
+    
+    
+    </script>
+    
+</body>
+</html>

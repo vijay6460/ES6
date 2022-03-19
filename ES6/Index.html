@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="one"></p>
+    <p id="fun"></p>
+
+    <script>
+        //Functions and fat arrow functions ES5
+        const z=(x,y)=> {return x*y}
+        document.getElementById("one").innerHTML=z(7,8)
+
+        //for of loop
+        const fruits=["banana",'apple','orange','pineapple']
+        let text="";
+        for( let x of fruits){
+         console.log(x)
+        }
+
+        //Loop over string
+        let string="Hello world! This is funny"
+        let text2="";
+        for (let y of string){
+            console.log(y)
+        }
+
+    </script>
+    
+</body>
+</html>
